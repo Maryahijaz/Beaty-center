@@ -9,11 +9,14 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Beaty_center
 {
     public partial class Form3 : Form
     {
+        private readonly string filePath = @"C:\Users\marir\OneDrive\Desktop\3.6\NDP\Beauty odev\contact_info.txt";
+
         public Form3()
         {
             InitializeComponent();
@@ -21,37 +24,46 @@ namespace Beaty_center
 
         private void Send_Click(object sender, EventArgs e)
         {
-            try
+            string name = txtName.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string message = txtMessage.Text.Trim();
+
+            // Regular expression for email addresses
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            // Check if name, email, and message are not empty
+            if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(message) && Regex.IsMatch(email, emailPattern))
             {
-                // Sender's email address and password
-                string senderEmail = "marmarhijazi@gmail.com";
-                string senderPassword = "marmarhijazi@gmail.com";
-
-                // Recipient's email address
-                string recipientEmail = "marirohijazi@gmail.com";
-
-                // Create and configure the SMTP client
-                SmtpClient smtpClient = new SmtpClient("smtp.example.com")
+                try
                 {
-                    Port = 587,
-                    Credentials = new NetworkCredential(senderEmail, senderPassword),
-                    EnableSsl = true
-                };
-                // Create the email message
-                MailMessage mailMessage = new MailMessage(senderEmail, recipientEmail)
-                {
-                    Subject = "Message from " + textBox3.Text,
-                    Body = "Name: " + textBox2.Text + "\nEmail: " + textBox3.Text + "\nMessage: " + textBox3.Text
-                };
-                // Send the email
-                smtpClient.Send(mailMessage);
+                    // Add contact information to the file
+                    using (StreamWriter writer = File.AppendText(filePath))
+                    {
+                        writer.WriteLine($"Name: {name}");
+                        writer.WriteLine($"Email: {email}");
+                        writer.WriteLine($"Message: {message}");
+                        writer.WriteLine();
+                    }
 
-                MessageBox.Show("Email sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MessageBox.Show("Message sent successfully!");
+
+                    // Clear the text boxes after sending the message
+                    txtName.Clear();
+                    txtEmail.Clear();
+                    txtMessage.Clear();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill in all fields with valid information.", "Incomplete or Invalid Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

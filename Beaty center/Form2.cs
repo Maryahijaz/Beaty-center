@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,12 @@ namespace Beaty_center
 {
     public partial class Form2 : Form
     {
+
         public Form2()
         {
             InitializeComponent();
         }
+
 
         private void Services_Click(object sender, EventArgs e)
         {
@@ -48,6 +51,30 @@ namespace Beaty_center
             Reservation form4 = new Reservation();
             form4.ShowDialog();
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Reserv_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Reservation form4 = new Reservation();
+            form4.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

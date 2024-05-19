@@ -1,4 +1,17 @@
-﻿using System;
+﻿/*************************************************************************************************************************
+                                                  SAKARYA ÜNİVERSİTESİ
+                                          BİLGİSAYAR VE BİLİŞİM BİLİMLERİ FAKÜLTESİ
+                                                  BİLGİSAYAR MÜHENDİSLİĞİ BÖLÜMÜ
+                                                 NESNEYE DAYALI PROGRAMLAMA DERSİ
+                                                     2023-2024 BAHAR DÖNEMİ
+                            
+                                         ÖĞRENCİ ADI: MARYA KHALED MAHMOUD HIJAZI.
+                                         ÖĞRENCİ NUMARASI: G201210573.
+                                         DERSİN ALINDIĞI GRUP: 1.B GRUBU.
+
+
+*************************************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

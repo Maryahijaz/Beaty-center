@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
+using Beaty_center.All_user_control;
+using System.Xml.Linq;
 
 namespace Beaty_center
 {
@@ -59,46 +61,37 @@ namespace Beaty_center
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string recipientPhoneNumber = "+905525420415"; // Your provided Turkish phone number
-            //string reservationInfo = txtReservationInfo.Text;
-            string carrierDomain = "com.tr"; // Replace this with the actual email-to-SMS gateway domain for the Turkish carrier
 
-            string toEmail = $"{recipientPhoneNumber}@{carrierDomain}";
-            string fromEmail = "marirohijazi@gmail.com"; // Your provided email
-            string fromPassword = "Mmaria12345"; // Replace with your email password
+            string customerName = NameC.Text;
+            string customerSurname = sur.Text;
+            string phoneNumber = txtPhoneNumber.Text;
+            string email = Email.Text;
+            string Services = comServices.Text;
 
-            try
+            // Add reservation information to UC_CustomerRegistration
+            UC_CustomerRegistration ucCustomerRegistration = new UC_CustomerRegistration();
+            ucCustomerRegistration.AddReservationFromForm4(customerName, customerSurname, phoneNumber, email, Services);
+
+            // Add UC_CustomerRegistration to the form if not already added
+            if (!this.Controls.Contains(ucCustomerRegistration))
             {
-                var smtpClient = new SmtpClient("smtp.gmail.com") // Using Gmail's SMTP server
-                {
-                    Port = 587,
-                    Credentials = new NetworkCredential(fromEmail, fromPassword),
-                    EnableSsl = true,
-                };
-
-                var mailMessage = new MailMessage
-                {
-                    From = new MailAddress(fromEmail),
-                    Subject = "Reservation Information",
-                    //Body = reservationInfo,
-                    IsBodyHtml = false,
-                };
-                mailMessage.To.Add(toEmail);
-
-                smtpClient.Send(mailMessage);
-                MessageBox.Show("Message sent successfully!");
-
-                ReserList reserList = new ReserList();
+                this.Controls.Add(ucCustomerRegistration);
+                ucCustomerRegistration.Dock = DockStyle.Fill;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
+
+            // Display successful message
+            MessageBox.Show("Reservation added successfully!");
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Reservation_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

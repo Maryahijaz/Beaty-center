@@ -35,12 +35,15 @@
             ContactUs = new Button();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
-            textBox2 = new TextBox();
+            Email = new TextBox();
             txtPhoneNumber = new TextBox();
             btnReservationInfo = new Button();
             sur = new TextBox();
-            textBox1 = new TextBox();
+            NameC = new TextBox();
             Reser = new Label();
+            comServices = new ComboBox();
+            label2 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -104,12 +107,15 @@
             // panel1
             // 
             panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(dateTimePicker1);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(comServices);
             panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(Email);
             panel1.Controls.Add(txtPhoneNumber);
             panel1.Controls.Add(btnReservationInfo);
             panel1.Controls.Add(sur);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(NameC);
             panel1.Controls.Add(Reser);
             panel1.Location = new Point(161, 145);
             panel1.Margin = new Padding(3, 4, 3, 4);
@@ -129,20 +135,20 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
-            // textBox2
+            // Email
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Lucida Handwriting", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.ForeColor = Color.DarkMagenta;
-            textBox2.Location = new Point(328, 169);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Email";
-            textBox2.Size = new Size(217, 33);
-            textBox2.TabIndex = 5;
-            textBox2.TextAlign = HorizontalAlignment.Center;
+            Email.BackColor = Color.White;
+            Email.BorderStyle = BorderStyle.FixedSingle;
+            Email.Font = new Font("Lucida Handwriting", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Email.ForeColor = Color.DarkMagenta;
+            Email.Location = new Point(328, 169);
+            Email.Margin = new Padding(3, 4, 3, 4);
+            Email.Multiline = true;
+            Email.Name = "Email";
+            Email.PlaceholderText = "Email";
+            Email.Size = new Size(217, 33);
+            Email.TabIndex = 5;
+            Email.TextAlign = HorizontalAlignment.Center;
             // 
             // txtPhoneNumber
             // 
@@ -165,7 +171,7 @@
             btnReservationInfo.BackgroundImageLayout = ImageLayout.None;
             btnReservationInfo.FlatStyle = FlatStyle.Popup;
             btnReservationInfo.ForeColor = Color.DarkMagenta;
-            btnReservationInfo.Location = new Point(181, 248);
+            btnReservationInfo.Location = new Point(171, 331);
             btnReservationInfo.Margin = new Padding(3, 4, 3, 4);
             btnReservationInfo.Name = "btnReservationInfo";
             btnReservationInfo.Size = new Size(217, 47);
@@ -183,25 +189,25 @@
             sur.Margin = new Padding(3, 4, 3, 4);
             sur.Multiline = true;
             sur.Name = "sur";
-            sur.PlaceholderText = "User Surname";
+            sur.PlaceholderText = " Surname";
             sur.Size = new Size(217, 33);
             sur.TabIndex = 2;
             sur.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox1
+            // NameC
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Lucida Handwriting", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.DarkMagenta;
-            textBox1.Location = new Point(32, 105);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "User Name";
-            textBox1.Size = new Size(217, 33);
-            textBox1.TabIndex = 1;
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            NameC.BackColor = Color.White;
+            NameC.BorderStyle = BorderStyle.FixedSingle;
+            NameC.Font = new Font("Lucida Handwriting", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            NameC.ForeColor = Color.DarkMagenta;
+            NameC.Location = new Point(32, 105);
+            NameC.Margin = new Padding(3, 4, 3, 4);
+            NameC.Multiline = true;
+            NameC.Name = "NameC";
+            NameC.PlaceholderText = " Name";
+            NameC.Size = new Size(217, 33);
+            NameC.TabIndex = 1;
+            NameC.TextAlign = HorizontalAlignment.Center;
             // 
             // Reser
             // 
@@ -214,6 +220,33 @@
             Reser.Text = "Reservation";
             Reser.TextAlign = ContentAlignment.MiddleCenter;
             Reser.Click += Reser_Click;
+            // 
+            // comServices
+            // 
+            comServices.FormattingEnabled = true;
+            comServices.Items.AddRange(new object[] { "Facail", "Spa", "Hair Cut" });
+            comServices.Location = new Point(98, 240);
+            comServices.Name = "comServices";
+            comServices.Size = new Size(151, 28);
+            comServices.TabIndex = 14;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Lucida Calligraphy", 6F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.DarkMagenta;
+            label2.Location = new Point(32, 240);
+            label2.Name = "label2";
+            label2.Size = new Size(62, 28);
+            label2.TabIndex = 15;
+            label2.Text = "Services";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(307, 241);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.TabIndex = 16;
             // 
             // Reservation
             // 
@@ -232,6 +265,7 @@
             Name = "Reservation";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Reservation";
+            Load += Reservation_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -246,11 +280,14 @@
         private Button ContactUs;
         private Panel panel1;
         private Label Reser;
-        private TextBox textBox1;
+        private TextBox NameC;
         private TextBox sur;
         private Button btnReservationInfo;
         private TextBox txtPhoneNumber;
-        private TextBox textBox2;
+        private TextBox Email;
         private PictureBox pictureBox2;
+        private Label label2;
+        private ComboBox comServices;
+        private DateTimePicker dateTimePicker1;
     }
 }

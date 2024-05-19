@@ -676,4 +676,14 @@
   <metadata name="Reservation.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Welcome to CHERRY BEAUTY .  We're dedicated to helping you look and feel your best. Our team of professionals offers a range of services including facials, haircuts, and spa treatments, all designed to pamper and rejuvenate you.
+
+At CHERRY BEAUTY, your comfort and satisfaction are our top priorities. We strive to create a relaxing and welcoming environment where you can unwind and indulge in some much-needed self-care.
+
+Whether you're treating yourself to a quick pick-me-up or a full day of pampering, we're here to cater to your needs and ensure you leave feeling refreshed and revitalized.
+
+Join us at CHERRY BEAUTY and experience the ultimate in beauty and relaxation. We look forward to welcoming you!
+</value>
+  </data>
 </root>

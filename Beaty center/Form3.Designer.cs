@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtName = new TextBox();
+            txtMessage = new TextBox();
+            txtEmail = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -44,45 +44,45 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // txtName
             // 
-            textBox1.BackColor = Color.LightGray;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.ForeColor = Color.DarkMagenta;
-            textBox1.Location = new Point(34, 191);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(265, 34);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "Name";
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            txtName.BackColor = Color.LightGray;
+            txtName.BorderStyle = BorderStyle.FixedSingle;
+            txtName.ForeColor = Color.DarkMagenta;
+            txtName.Location = new Point(34, 191);
+            txtName.Multiline = true;
+            txtName.Name = "txtName";
+            txtName.PlaceholderText = "Name";
+            txtName.Size = new Size(265, 34);
+            txtName.TabIndex = 0;
+            txtName.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox2
+            // txtMessage
             // 
-            textBox2.BackColor = Color.LightGray;
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.ForeColor = Color.DarkMagenta;
-            textBox2.Location = new Point(34, 309);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(265, 153);
-            textBox2.TabIndex = 1;
-            textBox2.Text = "Message";
-            textBox2.TextChanged += textBox2_TextChanged;
+            txtMessage.BackColor = Color.LightGray;
+            txtMessage.BorderStyle = BorderStyle.FixedSingle;
+            txtMessage.ForeColor = Color.DarkMagenta;
+            txtMessage.Location = new Point(34, 309);
+            txtMessage.Multiline = true;
+            txtMessage.Name = "txtMessage";
+            txtMessage.PlaceholderText = "Message";
+            txtMessage.Size = new Size(265, 153);
+            txtMessage.TabIndex = 1;
+            txtMessage.TextChanged += textBox2_TextChanged;
             // 
-            // textBox3
+            // txtEmail
             // 
-            textBox3.BackColor = Color.Gainsboro;
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.ForeColor = Color.DarkMagenta;
-            textBox3.Location = new Point(34, 252);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(265, 34);
-            textBox3.TabIndex = 2;
-            textBox3.Text = "Email";
-            textBox3.TextAlign = HorizontalAlignment.Center;
-            textBox3.TextChanged += textBox3_TextChanged;
+            txtEmail.BackColor = Color.Gainsboro;
+            txtEmail.BorderStyle = BorderStyle.FixedSingle;
+            txtEmail.ForeColor = Color.DarkMagenta;
+            txtEmail.Location = new Point(34, 252);
+            txtEmail.Multiline = true;
+            txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "Email";
+            txtEmail.Size = new Size(265, 34);
+            txtEmail.TabIndex = 2;
+            txtEmail.TextAlign = HorizontalAlignment.Center;
+            txtEmail.TextChanged += textBox3_TextChanged;
             // 
             // label1
             // 
@@ -220,9 +220,9 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtEmail);
+            Controls.Add(txtMessage);
+            Controls.Add(txtName);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form3";
             StartPosition = FormStartPosition.CenterScreen;
@@ -234,9 +234,9 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtName;
+        private TextBox txtMessage;
+        private TextBox txtEmail;
         private Label label1;
         private Label label2;
         private Label label3;

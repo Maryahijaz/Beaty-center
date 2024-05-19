@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             HOME = new Button();
-            Services = new Button();
             ContactUs = new Button();
             label1 = new Label();
             pictureBox2 = new PictureBox();
@@ -51,11 +50,14 @@
             label12 = new Label();
             label13 = new Label();
             Reservation = new Button();
+            Reserv = new Button();
+            pictureBox6 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // HOME
@@ -64,27 +66,13 @@
             HOME.FlatStyle = FlatStyle.Popup;
             HOME.Font = new Font("Magneto", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             HOME.ForeColor = Color.DarkMagenta;
-            HOME.Location = new Point(11, 12);
+            HOME.Location = new Point(514, 12);
             HOME.Name = "HOME";
-            HOME.Size = new Size(94, 29);
+            HOME.Size = new Size(112, 29);
             HOME.TabIndex = 1;
             HOME.Text = "Home";
             HOME.UseVisualStyleBackColor = false;
             HOME.Click += HOME_Click;
-            // 
-            // Services
-            // 
-            Services.BackColor = Color.Silver;
-            Services.FlatStyle = FlatStyle.Popup;
-            Services.Font = new Font("Magneto", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            Services.ForeColor = Color.DarkMagenta;
-            Services.Location = new Point(112, 12);
-            Services.Name = "Services";
-            Services.Size = new Size(94, 29);
-            Services.TabIndex = 2;
-            Services.Text = "Services";
-            Services.UseVisualStyleBackColor = false;
-            Services.Click += Services_Click;
             // 
             // ContactUs
             // 
@@ -92,9 +80,9 @@
             ContactUs.FlatStyle = FlatStyle.Popup;
             ContactUs.Font = new Font("Magneto", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             ContactUs.ForeColor = Color.DarkMagenta;
-            ContactUs.Location = new Point(213, 12);
+            ContactUs.Location = new Point(655, 12);
             ContactUs.Name = "ContactUs";
-            ContactUs.Size = new Size(94, 29);
+            ContactUs.Size = new Size(107, 29);
             ContactUs.TabIndex = 3;
             ContactUs.Text = "Contact ";
             ContactUs.UseVisualStyleBackColor = false;
@@ -107,12 +95,13 @@
             label1.FlatStyle = FlatStyle.Popup;
             label1.Font = new Font("Lucida Calligraphy", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.DarkMagenta;
-            label1.Location = new Point(384, 0);
+            label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(250, 54);
+            label1.Size = new Size(459, 57);
             label1.TabIndex = 4;
             label1.Text = "CHERRY BEAUTY";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // pictureBox2
             // 
@@ -217,6 +206,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // pictureBox5
             // 
@@ -307,11 +297,39 @@
             Reservation.UseVisualStyleBackColor = false;
             Reservation.Click += Reservation_Click;
             // 
+            // Reserv
+            // 
+            Reserv.BackColor = Color.Silver;
+            Reserv.FlatStyle = FlatStyle.Popup;
+            Reserv.Font = new Font("Magneto", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            Reserv.ForeColor = Color.DarkMagenta;
+            Reserv.Location = new Point(796, 12);
+            Reserv.Name = "Reserv";
+            Reserv.Size = new Size(107, 29);
+            Reserv.TabIndex = 22;
+            Reserv.Text = "Reservation";
+            Reserv.UseVisualStyleBackColor = false;
+            Reserv.Click += Reserv_Click;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(922, 0);
+            pictureBox6.Margin = new Padding(3, 4, 3, 4);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(38, 30);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 23;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(958, 1102);
+            Controls.Add(pictureBox6);
+            Controls.Add(Reserv);
             Controls.Add(label13);
             Controls.Add(label12);
             Controls.Add(label11);
@@ -331,7 +349,6 @@
             Controls.Add(pictureBox2);
             Controls.Add(label1);
             Controls.Add(ContactUs);
-            Controls.Add(Services);
             Controls.Add(HOME);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
@@ -343,12 +360,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private Button HOME;
-        private Button Services;
         private Button ContactUs;
         private Label label1;
         private PictureBox pictureBox2;
@@ -369,5 +386,7 @@
         private Label label12;
         private Label label13;
         private Button Reservation;
+        private Button Reserv;
+        private PictureBox pictureBox6;
     }
 }
